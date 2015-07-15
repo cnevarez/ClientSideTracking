@@ -1,6 +1,8 @@
 <?php
 include "config/config.php";
 
+date_default_timezone_set("America/Los_Angeles");
+
 $page = $_GET['page'];
 $time =date("l F d, Y  h:i:s a T ");
 // Create connection
