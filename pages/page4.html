@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <style>
+    #ptable tr:nth-child(even) {
+	background: #CCC;
+	}
+	#ptable tr:nth-child(odd) {
+		background: #FFF
+	}
+	</style>
+  </head>
+  <body>
+  	You are on Page 4<br />
+  	<a href="page1.html">Visit Page 1 </a><br />
+  	<a href="page2.html">Visit Page 2 </a><br />
+  	<a href="page3.html">Visit Page 3 </a><br />
+  	<a href="page4.html">Visit Page 4 </a><br />
+
+  	<div id="byte_content"></div>
+
+  	<iframe src="../scripts/track.php?page=Page4" style="display:none;"></iframe>
+<script>
+  	//Normal AJAX
+function sendTheFile(page){
+//Ajax requesst
+   $.ajax({
+        type: "POST",
+        url: "../scripts/view.php",
+        data: {data : "page"}, 
+        cache: false,
+
+        success: function(data) {
+           // data is ur summary
+          $('#byte_content').html(data);
+        }
+    });
+}
+sendTheFile();
+
+//End Normal AJAX
+</script>
+  </body>
+</html>
