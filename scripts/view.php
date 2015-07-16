@@ -5,7 +5,8 @@ include "config/config.php";
 date_default_timezone_set("America/Los_Angeles");
 
 $page = $_POST['data'];
-$time =date("l F d, Y  h:i:s a T");
+$day =date("l F d, Y");
+$time = date("h:i:s a T");
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password);
@@ -45,7 +46,7 @@ var page = getQueryVariable(\'page\');
 
 <form method="post">
 //I have prepopulated the time for this input\'s value, but leave the value blank. This value should be the end result.
-	<input type="hidden" id="timestamp" name="CustomFieldName" value="hit page '.$page.' on '.$time.'"/>
+	<input type="hidden" id="timestamp" name="CustomFieldName" value="hit page '.$page.' on '.$day.' at '.$time.'"/>
 </form>
 <script>
 	var d = new Date();
