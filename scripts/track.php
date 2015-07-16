@@ -1,5 +1,7 @@
+
 <?php
 include "config/config.php";
+
 
 date_default_timezone_set("America/Los_Angeles");
 
@@ -20,4 +22,6 @@ else{
 
 $sql = "INSERT INTO tracking_table(page) VALUES ('hit page $page on $time')";
 mysqli_query($conn, $sql);
+
+
 ?>

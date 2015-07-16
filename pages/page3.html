@@ -2,21 +2,13 @@
   <head>
     <title></title>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <style>
-    #ptable tr:nth-child(even) {
-	background: #CCC;
-	}
-	#ptable tr:nth-child(odd) {
-		background: #FFF
-	}
-	</style>
   </head>
   <body>
-  	You are on Page 3<br />
+  	<h3>You are on Page 3</h3><br />
   	<a href="page1.html">Visit Page 1 </a><br />
   	<a href="page2.html">Visit Page 2 </a><br />
   	<a href="page3.html">Visit Page 3 </a><br />
-  	<a href="page4.html">Visit Page 4 </a><br />
+  	<a href="page4.html">Visit Page 4 </a><br /><br />
 
   	<div id="byte_content"></div>
 
@@ -28,7 +20,7 @@ function sendTheFile(page){
    $.ajax({
         type: "POST",
         url: "../scripts/view.php",
-        data: {data : "page"}, 
+        data: {data : page}, 
         cache: false,
 
         success: function(data) {
@@ -37,9 +29,28 @@ function sendTheFile(page){
         }
     });
 }
-sendTheFile();
+sendTheFile('page3');
 
 //End Normal AJAX
 </script>
   </body>
+
+    <style>
+    body{
+    margin:50px;
+  }
+  td{
+      padding: 8px;
+  }
+  th{
+      padding: 8px;
+  }
+    #ptable tr:nth-child(even) {
+  background: #CCC;
+  }
+  #ptable tr:nth-child(odd) {
+    background: #FFF;
+  }
+  
+  </style>
 </html>
